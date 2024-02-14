@@ -1,0 +1,173 @@
+@font-face {
+    font-family: 'Unbounded';
+    src: url('font/Unbounded/static/Unbounded-Bold.ttf') format('truetype');
+
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}                                           
+
+
+
+header{
+    display: flex;
+    justify-content: space-between;
+    padding: 2vh 10vw;
+    align-items: center;
+}
+
+
+
+.container {
+    width: 80vw;
+}
+
+.main__title {
+    color: #6aa172;
+    font-family: 'Unbounded';
+    text-transform: uppercase;
+    transition: .4s;
+    cursor: pointer;
+}
+
+.main__title:hover {
+    transform: scale(1.2);
+}
+
+
+.icon{
+    transition: .3s;
+    cursor: pointer;
+}
+.icon:hover{
+    opacity: 0.7;
+
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+
+}
+
+
+.main__photo{
+    height: 50vh;
+
+
+}
+.main__photo img {
+    width: inherit;
+    object-fit: cover;
+    height: inherit;
+    transition: .7s;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.main__photo img:hover {
+    opacity: 90%;
+    border-radius: 30px;
+}
+
+
+#modalMenu {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    display: none;
+    z-index: 3;
+    background: #35533a;
+    top: 0;
+    padding: 2vh 10vw;
+
+}
+
+
+
+
+@keyframes OpenModalMenu {
+
+    from {
+        top: -100vh;
+    }
+    to {
+        top: 0;
+    }
+    
+}
+@keyframes CloseModalMenu {
+    from{
+        top: 0;
+        }
+    to {
+        top: 100vh;
+    }
+    
+}
+
+#modalMenu.openMenu {
+    animation: OpenModalMenu 0.5s linear forwards;
+    
+    
+}
+
+
+#modalMenu.closeMenu {
+    animation: CloseModalMenu 0.5s linear forwards;
+}
+
+
+
+#modalCart {
+    position: fixed;
+    width: 30vw;
+    height: 100vh;
+    z-index: 3;
+    right: 0;
+    top: 0;
+    background: white;
+    border: 2px solid #6aa172;
+    display: none;
+}
+
+
+
+
+@keyframes OpenModalCart {
+
+    from {
+        right: -20vw;
+    }
+    to {
+        right: 0;
+    }
+    
+}
+@keyframes CloseModalCart {
+    from{
+        right: 0;
+        }
+    to {
+        right: -40vw;
+    }
+    
+}
+
+
+#modalCart.openCart {
+    animation: OpenModalCart 0.5s linear forwards;
+    
+    
+}
+
+
+#modalCart.closeCart {
+    animation: CloseModalCart 0.7s linear forwards;
+}
+
+

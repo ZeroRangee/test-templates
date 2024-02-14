@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Главная страница</title>
+</head>
+<body>
+    <header>
+        <div class="menu icon" id="openBtnModalMenu">
+            <img  src="./icons/menu_pc.svg" alt="" onclick="modalMenuEvent()">
+        </div>
+        <span class="main__title">
+            <h1>succulentum</h1>
+        </span>
+        <div class="cart icon">
+            <img src="./icons/shopping_bag_pc.svg" alt="" onclick="modalCartEvent()">
+        </div>
+    </header>
+    <div class="wrapper">
+
+        <div class="container main__photo">
+            <img src="./image/main_photo.jpg" alt="Основное фото">
+        </div>
+
+    </div>
+
+
+    <div id="modalMenu">
+        <div class="modal__menu__body">
+            <div class="modal__menu__header">
+                <div class="modal__close">
+                    <img src="./icons/close.svg" alt="" id="closeBtnModalMenu" onclick="modalMenuEvent()" class="icon">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="modalCart">
+        <div class="modal__cart__body">
+            <div class="modal__cart__header">
+                <div class="modal__cart__close icon">
+                    <img   src="./icons/close.svg" alt="" onclick="modalCartEvent()"/>
+                </div>
+
+
+            </div>
+            <div class="modal__cart__main">
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <script>
+
+
+        modalMenuEvent = (event) => {
+            if (!modalMenu.classList.contains('openMenu')){
+                modalMenu.classList.remove("closeMenu");
+                setTimeout(() => modalMenu.style.display = 'block', 500)
+                modalMenu.classList.add("openMenu");
+            }else{
+                
+                modalMenu.classList.remove("openMenu")
+                setTimeout(() => modalMenu.style.display = 'none', 500)
+                modalMenu.classList.add("closeMenu")
+            }
+
+            
+        }
+
+
+        modalCartEvent = (event) => {
+            if (!modalCart.classList.contains('openCart')){
+                modalCart.classList.remove("closeCart");
+                setTimeout(() => modalCart.style.display = 'block', 700)
+                modalCart.classList.add("openCart");
+            }else{
+                
+                modalCart.classList.remove("openCart")
+                setTimeout(() => modalCart.style.display = 'none', 700)
+                modalCart.classList.add("closeCart")
+            }
+        }
+
+
+    </script>
+
+</body>
+
+</html>
